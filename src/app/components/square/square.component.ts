@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-square',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SquareComponent implements OnInit {
 
-  constructor() { }
+  public rando:number = Math.random();
+
+  @Input() squareValue: 'X' | 'O' | undefined;
+  constructor() {
+    setInterval(()=>this.rando=Math.random(),2000);
+  }
 
   ngOnInit(): void {
   }
+
 
 }
